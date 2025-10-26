@@ -3,23 +3,34 @@ project:
 
 book:
   title: "Sports-Training-Science"
-  author: "Norah Jones"
+  author: "姜成"
   date: "2025/10/26"
+  # **重要的顺序控制：** 在这里列出你的所有章节文件
   chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - index.qmd  #封面、前言或导读 (必须是第一个)
+    - chapter1.qmd  #第一章
+    - chapter2.qmd  #第二章
+    - references.qmd #参考文献
+    - appendix.qmd   #附录
 
 bibliography: references.bib
+
+# 全局代码执行选项：平衡可重复性与阅读体验
+execute:
+  echo: true          # 默认显示代码，便于学习
+  warning: false      # 隐藏警告信息，保持输出整洁
+  error: false        # 遇到错误时继续渲染后续内容
+  cache: true         # 为耗时计算开启缓存，大幅提升渲染速度
 
 format:
   html:
     theme:
       - cosmo
       - brand
+    # 启用侧边栏导航，方便浏览
+    toc-depth: 3
+    toc-expand: 2
   pdf:
-    documentclass: scrreprt
+    documentclass: book
 
 editor: visual
-
